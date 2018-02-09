@@ -1,0 +1,36 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+}
+
+// Community plugin
+plugins {
+    id 'com.github.johnrengelman.shadow' version '1.2.3'
+}
+
+// Core plugin
+apply plugin: 'java'
+apply plugin: 'application'
+
+mainClassName = 'com.krawchukd.pattern.Application'
+
+repositories {
+    mavenCentral()
+}
+
+jar {
+  manifest {
+    attributes 'Main-Class' : 'com.krawchukd.pattern.Application'
+  }
+}
+
+dependencies {
+    compile (
+    		[group: 'org.apache.logging.log4j', name: 'log4j-api', version: '2.9.0'],
+        [group: 'org.apache.logging.log4j', name: 'log4j-core', version: '2.9.0'],
+        [group: 'org.apache.commons', name: 'commons-lang3', version: '3.4'],
+    	)
+
+    testCompile 'junit:junit:4.12'
+}

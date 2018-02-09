@@ -20,3 +20,17 @@
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
+/.gradle/
+/gradle/
+/bin/
+
+# Artifacts
+/build/
+
+# Mac Specific files
+*.DS_Store
+
+# Eclipse fluff
+*.project
+*.classpath
+/.settings/
